@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sampleOpenCVFacialRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-C1-4RQ" userLabel="Before Image">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-4c-WDr" userLabel="After Image">
+                                <rect key="frame" x="0.0" y="267" width="375" height="267"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvM-Vo-hnX">
+                                <rect key="frame" x="140" y="571" width="94" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rvM-Vo-hnX" secondAttribute="height" multiplier="23:15" id="P6a-Cy-lgN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="detect"/>
+                                <connections>
+                                    <action selector="pick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Lr-Ou-eCv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GpR-4c-WDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4By-hM-Wwc"/>
+                            <constraint firstItem="Kjg-C1-4RQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="7nV-bB-Pcg"/>
+                            <constraint firstItem="Kjg-C1-4RQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ax5-78-FrU"/>
+                            <constraint firstItem="Kjg-C1-4RQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="2/5" id="HSu-dE-hwy"/>
+                            <constraint firstItem="rvM-Vo-hnX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="J9T-HQ-KTs"/>
+                            <constraint firstItem="GpR-4c-WDr" firstAttribute="width" secondItem="Kjg-C1-4RQ" secondAttribute="width" id="Nos-Su-F5J"/>
+                            <constraint firstItem="rvM-Vo-hnX" firstAttribute="centerY" secondItem="GpR-4c-WDr" secondAttribute="bottom" multiplier="9/8" id="Qoa-ln-ZbT"/>
+                            <constraint firstItem="GpR-4c-WDr" firstAttribute="height" secondItem="Kjg-C1-4RQ" secondAttribute="height" id="X2i-DD-3Xd"/>
+                            <constraint firstItem="GpR-4c-WDr" firstAttribute="top" secondItem="Kjg-C1-4RQ" secondAttribute="bottom" id="ZGp-Ww-wk0"/>
+                            <constraint firstItem="rvM-Vo-hnX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iTU-N6-PM0"/>
+                            <constraint firstItem="Kjg-C1-4RQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pNP-mw-cqd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="afterView" destination="GpR-4c-WDr" id="g0g-EL-3hD"/>
+                        <outlet property="beforeView" destination="Kjg-C1-4RQ" id="wRn-1u-d28"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="man" width="300" height="300"/>
+    </resources>
+</document>
